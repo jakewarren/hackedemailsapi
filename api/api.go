@@ -39,9 +39,9 @@ type Breach struct {
 
 
 
-// LookupEmail returns the definitions from Urban Dictionary for a given word.
-func LookupEmail(word string) (response *Response, err error) {
-	endpoint := fmt.Sprintf("%s/api?q=%s", hackedemailsAPIURI, url.QueryEscape(word))
+// LookupEmail returns the breach data from hacked-emails.com for a given email
+func LookupEmail(email string) (response *Response, err error) {
+	endpoint := fmt.Sprintf("%s/api?q=%s", hackedemailsAPIURI, url.QueryEscape(email))
 	client := &http.Client{
 		Timeout: 15 * time.Second,
 	}
