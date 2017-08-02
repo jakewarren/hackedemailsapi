@@ -1,4 +1,7 @@
 # hackedemailsapi
+[![GitHub release](http://img.shields.io/github/release/jakewarren/hackedemailsapi.svg?style=flat-square)](https://github.com/jakewarren/hackedemailsapi/releases])
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/jakewarren/hackedemailsapi/blob/master/LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jakewarren/hackedemailsapi)](https://goreportcard.com/report/github.com/jakewarren/hackedemailsapi)
 
 Unofficial API client for hacked-emails.com. Queries the API for any known breaches involving an email address.
 
