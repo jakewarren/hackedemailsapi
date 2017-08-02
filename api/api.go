@@ -65,7 +65,7 @@ func LookupEmail(email string) (response *Response, err error) {
 		jsonerr = json.Unmarshal(*objmap["data"], &data)
 
 		if jsonerr == nil {
-			return nil, errors.New(fmt.Sprintf("status: %s - data: %s\n", status, data))
+			return nil, fmt.Errorf("status: %s - data: %s", status, data)
 		}
 
 		return nil, err
