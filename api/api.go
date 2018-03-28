@@ -2,7 +2,6 @@ package api
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -53,8 +52,7 @@ func LookupEmail(email string) (response *Response, err error) {
 
 	body, _ := ioutil.ReadAll(resp.Body)
 
-	dec := json.NewDecoder(resp.Body)
-	if err = dec.Decode(&response); err != nil {
+	if err = json.Unmarshal(body, &response); err != nil {
 		//attempt to decode status and data field to check for error message
 		var objmap map[string]*json.RawMessage
 
