@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"os"
 
+	"time"
+
 	"github.com/apex/log"
 	"github.com/apex/log/handlers/cli"
 	"github.com/jakewarren/hackedemailsapi/api"
 	"github.com/jinzhu/now"
 	"gopkg.in/alecthomas/kingpin.v2"
-	"time"
 )
 
 var (
@@ -89,6 +90,8 @@ func printResults(email string) {
 		} else {
 			fmt.Printf("%d breaches returned for %s (%d filtered out)\n", breachCount, response.Query, (len(response.Breaches) - breachCount))
 		}
+	} else if breachCount > 0 {
+		fmt.Printf("%d breaches returned for %s (%d filtered out)\n", breachCount, response.Query, (len(response.Breaches) - breachCount))
 	}
 
 	fmt.Println(defResponse)
